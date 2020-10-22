@@ -4,7 +4,7 @@ import time
 
 # Set Timezone
 time.strftime('%X %x %Z %w')
-os.environ['TZ'] = "Asia/Dhaka"
+os.environ['TZ'] = "Atlantic/Reykjavik"
 time.tzset()
 
 from flask import Flask, jsonify
