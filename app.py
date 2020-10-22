@@ -4,7 +4,7 @@ import time
 
 # Set Timezone
 time.strftime('%X %x %Z %w')
-os.environ['TZ'] = "Atlantic/Reykjavik"
+os.environ['TZ'] = "Europe/London"
 time.tzset()
 
 from flask import Flask, jsonify
