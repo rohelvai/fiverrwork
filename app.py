@@ -4,7 +4,7 @@ import time
 
 # Set Timezone
 time.strftime('%X %x %Z %w')
-os.environ['TZ'] = "Europe/London"
+os.environ['TZ'] = "Atlantic/Reykjavik"
 time.tzset()
 
 from flask import Flask, jsonify
@@ -18,11 +18,11 @@ def root():
     # print("Out of Office")
     return jsonify({"messages": [{"text": "Out of Office"}]})
   else:
-    if hr > 8 and hr < 17:
+    if hr >= 9 and hr <= 16:
       # print("Office Hour")
       return jsonify({"messages": [{"text": "Office Hour"}]})
-
-  print()
+    else:
+      return jsonify({"messages": [{"text": "Out of Office"}]})
 
 if __name__ == "__main__":
   # Debugging Disabled
